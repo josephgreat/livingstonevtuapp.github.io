@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Livingstone VTU App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #4CAF50;
+    }
+
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+
+    .sidebar {
+      height: 100vh;
+      background: #4CAF50;
+      color: white;
+      padding-top: 60px;
+      position: fixed;
+      width: 220px;
+    }
+
+    .sidebar a, .sidebar .dropdown-item {
+      color: white;
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover, .sidebar .dropdown-item:hover {
+      background-color: #2E8B57;
+    }
+
+    .sidebar .dropdown-menu {
+      background-color: #4CAF50;
+    }
+
+    .content {
+      margin-left: 220px;
+      padding: 20px;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .footer {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Livingstone VTU App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-box-arrow-in-right"></i> Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="#dashboard"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a href="#airtimeTopUp" data-bs-toggle="collapse" onclick="toggleContent('buyAirtime')"><i class="bi bi-phone"></i> Buy Airtime</a>
+    <a href="#airtimeHistory" data-bs-toggle="collapse" onclick="toggleContent('airtimeHistory')"><i class="bi bi-clock-history"></i> Airtime History</a>
+    <a href="#buyData" data-bs-toggle="collapse" onclick="toggleContent('buyData')"><i class="bi bi-wifi"></i> Buy Data</a>
+    <a href="#dataHistory" data-bs-toggle="collapse" onclick="toggleContent('dataHistory')"><i class="bi bi-clock-history"></i> Data History</a>
+    <a href="#referralProgram"><i class="bi bi-people"></i> Referral Program</a>
+    <a href="#withdrawReferral"><i class="bi bi-cash"></i> Withdraw Referral Commission</a>
+    <a href="#myAccount" data-bs-toggle="collapse"><i class="bi bi-person"></i> My Account</a>
+    <div class="collapse" id="myAccount">
+      <a href="fundwallet.html" class="dropdown-item">Add Money</a>
+      <a href="#" class="dropdown-item">All Transactions</a> 
+      <a href="#" class="dropdown-item">Wallet Bonus History</a>
+      <a href="#" class="dropdown-item">Update Profile</a>
+      <a href="#" class="dropdown-item">Change Password</a>
+    </div>
+    <a href="#cableTv"><i class="bi bi-tv"></i> Cable & TV Recharge</a>
+    <a href="#settings"><i class="bi bi-gear"></i> Settings</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div id="dashboardContent">
+      <h2>Dashboard</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Wallet Balance</h3>
+            <p>#1000</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Current Tier</h3>
+            <p>Starter</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Cashback Wallet</h3>
+            <p>#200</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Referral Bonus</h3>
+            <p>#50</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Total Transactions</h3>
+            <p>120</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Referral Count</h3>
+            <p>10</p> <!-- Replace this with the actual number of referrals -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="buyAirtimeContent" class="hidden">
+      <h2>Buy Airtime</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="feature-card">
+            <h3>Buy Airtime</h3>
+            <form>
+              <div class="mb-3">
+                <label for="network" class="form-label">Select Network</label>
+                <select class="form-select" id="network">
+                  <option value="MTN">MTN</option>
+                  <option value="GLO">GLO</option>
+                  <option value="9Mobile">9Mobile</option>
+                  <option value="Airtel">Airtel</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="phoneNumber" class="form-label">Enter Number</label>
+                <input type="text" class="form-control" id="phoneNumber">
+              </div>
+              <div class="mb-3">
+                <label for="amount" class="form-label">Enter Amount</label>
+                <input type="text" class="form-control" id="amount">
+              </div>
+              <div class="mb-3">
+                <label for="amountToPay" class="form-label">Amount to Pay (2% deducted)</label>
+                <input type="text" class="form-control" id="amountToPay" disabled>
+              </div>
+              <div class="mb-3">
+                <label for="secretPin" class="form-label">Secret Pin</label>
+                <input type="password" class="form-control" id="secretPin">
+              </div>
+              <p class="text-danger">Minimum airtime purchase: #10. Maximum: #100,000</p>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="saveForFutureUse">
+                <label class="form-check-label" for="saveForFutureUse">
+                  Save for future use
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Buy Airtime</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="airtimeHistoryContent" class="hidden">
+      <h2>Airtime History</h2>
+      <div class="feature-card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">SN</th>
+              <th scope="col">Network</th>
+              <th scope="col">Mobile No</th>
+              <th scope="col">Value</th>
+              <th scope="col">Old Balance</th>
+              <th scope="col">Amount Deducted</th>
+              <th scope="col">New Balance</th>
+              <th scope="col">Cashback</th>
+              <th scope="col">Status</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populate with airtime history data -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="buyDataContent" class="hidden">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="feature-card">
+            <h3>Buy Data</h3>
+            <form>
+              <div class="mb-3">
+                <label for="dataType" class="form-label">Select Network</label>
+                <select class="form-select" id="dataType">
+                  <option value="network">MTN</option>
+                  <option value="network">GLO</option>
+                  <option value="network">9Mobile</option>
+                  <option value="network">Airtel</option>
+                  <!-- Add more options if needed -->
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="dataBundle" class="form-label">Select Data Bundle</label>
+                <select class="form-select" id="dataBundle">
+                  <!-- Populate with available data bundles -->
+                  <option value="100MB">100MB - ₦100</option>
+                  <option value="500MB">500MB - ₦500</option>
+                  <option value="1GB">1GB - ₦1000</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="phoneNumberData" class="form-label">Enter Number</label>
+                <input type="text" class="form-control" id="phoneNumberData">
+              </div>
+              <div class="mb-3">
+                <label for="amountData" class="form-label">Amount</label>
+                <input type="text" class="form-control" id="amountData">
+              </div>
+              <div class="mb-3">
+                <label for="secretPinData" class="form-label">Secret Pin</label>
+                <input type="password" class="form-control" id="secretPinData">
+              </div>
+              <button type="submit" class="btn btn-primary">Buy Data</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dataHistoryContent" class="hidden">
+      <h2>Data History</h2>
+      <div class="feature-card">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">SN</th>
+              <th scope="col">Product</th>
+              <th scope="col">Mobile No</th>
+              <th scope="col">Old Balance</th>
+              <th scope="col">Amount Charged</th>
+              <th scope="col">New Balance</th>
+              <th scope="col">Cashback</th>
+              <th scope="col">Status</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populate with data history data -->
+            <tr>
+              <td>1</td>
+              <td>500MB</td>
+              <td>08012345678</td>
+              <td>₦1000</td>
+              <td>₦500</td>
+              <td>₦500</td>
+              <td>₦10</td>
+              <td>Success</td>
+              <td>2024-06-09</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Livingstone VTU App. All rights reserved.</p>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("amount").addEventListener("input", function() {
+      // Calculate 2% deduction for amount to pay
+      var amount = parseFloat(this.value);
+      if (!isNaN(amount)) {
+        var amountToPay = amount * 0.98;
+        document.getElementById("amountToPay").value = amountToPay.toFixed(2);
+      } else {
+        document.getElementById("amountToPay").value = "";
+      }
+    });
+
+    function toggleContent(contentId) {
+      var dashboardContent = document.getElementById("dashboardContent");
+      var buyAirtimeContent = document.getElementById("buyAirtimeContent");
+      var airtimeHistoryContent = document.getElementById("airtimeHistoryContent");
+      var buyDataContent = document.getElementById("buyDataContent");
+      var dataHistoryContent = document.getElementById("dataHistoryContent");
+      if (contentId === "buyAirtime") {
+        dashboardContent.classList.add("hidden");
+        airtimeHistoryContent.classList.add("hidden");
+        buyAirtimeContent.classList.remove("hidden");
+        buyDataContent.classList.add("hidden");
+        dataHistoryContent.classList.add("hidden");
+      } else if (contentId === "airtimeHistory") {
+        dashboardContent.classList.add("hidden");
+        buyAirtimeContent.classList.add("hidden");
+        airtimeHistoryContent.classList.remove("hidden");
+        buyDataContent.classList.add("hidden");
+        dataHistoryContent.classList.add("hidden");
+      } else if (contentId === "buyData") {
+        dashboardContent.classList.add("hidden");
+        buyAirtimeContent.classList.add("hidden");
+        airtimeHistoryContent.classList.add("hidden");
+        buyDataContent.classList.remove("hidden");
+        dataHistoryContent.classList.add("hidden");
+      } else if (contentId === "dataHistory") {
+        dashboardContent.classList.add("hidden");
+        buyAirtimeContent.classList.add("hidden");
+        airtimeHistoryContent.classList.add("hidden");
+        buyDataContent.classList.add("hidden");
+        dataHistoryContent.classList.remove("hidden");
+      } else {
+        dashboardContent.classList.remove("hidden");
+        buyAirtimeContent.classList.add("hidden");
+        airtimeHistoryContent.classList.add("hidden");
+        buyDataContent.classList.add("hidden");
+        dataHistoryContent.classList.add("hidden");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
