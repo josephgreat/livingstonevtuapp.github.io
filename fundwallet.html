@@ -142,34 +142,24 @@
   </nav>
 
   <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <a href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a>
-    <a href="#airtimeTopUp" data-bs-toggle="collapse"><i class="bi bi-phone"></i> Airtime Top-Up</a>
-    <div class="collapse" id="airtimeTopUp">
-      <a href="#" class="dropdown-item">MTN</a>
-      <a href="#" class="dropdown-item">Airtel</a>
-      <a href="#" class="dropdown-item">Glo</a>
-      <a href="#" class="dropdown-item">9Mobile</a>
-    </div>
-    <a href="#dataBundles" data-bs-toggle="collapse"><i class="bi bi-wifi"></i> Data Bundles</a>
-    <div class="collapse" id="dataBundles">
-      <a href="#" class="dropdown-item">MTN</a>
-      <a href="#" class="dropdown-item">Airtel</a>
-      <a href="#" class="dropdown-item">Glo</a>
-      <a href="#" class="dropdown-item">9Mobile</a>
-    </div>
-    <a href="#referralProgram"><i class="bi bi-people"></i> Referral Program</a>
-    <a href="#withdrawReferral"><i class="bi bi-cash"></i> Withdraw Referral Commission</a>
+  <div class="sidebar">
+    <a href="#dashboard"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a href="#airtimeTopUp" data-bs-toggle="collapse" onclick="toggleContent('buyAirtime')"><i class="bi bi-phone"></i> Buy Airtime</a>
+    <a href="#airtimeHistory" data-bs-toggle="collapse" onclick="toggleContent('airtimeHistory')"><i class="bi bi-clock-history"></i> Airtime History</a>
+    <a href="#buyData" data-bs-toggle="collapse" onclick="toggleContent('buyData')"><i class="bi bi-wifi"></i> Buy Data</a>
+    <a href="#dataHistory" data-bs-toggle="collapse" onclick="toggleContent('dataHistory')"><i class="bi bi-clock-history"></i> Data History</a>
+    <a href="#withdrawReferral"><i class="bi bi-cash"></i> Withdraw Referral Commission/Wallet Bonus</a>
     <a href="#myAccount" data-bs-toggle="collapse"><i class="bi bi-person"></i> My Account</a>
-    <div class="collapse show" id="myAccount">
-      <a href="add-money.html" class="dropdown-item">Add Money</a>
+    <div class="collapse" id="myAccount">
+      <a href="fundwallet.html" class="dropdown-item">Add Money</a>
       <a href="#" class="dropdown-item">Wallet Bonus History</a>
       <a href="#" class="dropdown-item">Update Profile</a>
-      <a href="#" class="dropdown-item">Referral Commission History</a>
     </div>
     <a href="#cableTv"><i class="bi bi-tv"></i> Cable & TV Recharge</a>
     <a href="#settings"><i class="bi bi-gear"></i> Settings</a>
   </div>
+    
+      
 
   <!-- Main Content -->
   <div class="content">
