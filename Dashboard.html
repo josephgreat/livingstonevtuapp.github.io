@@ -115,7 +115,7 @@
     <a href="#airtimeHistory" data-bs-toggle="collapse" onclick="toggleContent('airtimeHistory')"><i class="bi bi-clock-history"></i> Airtime History</a>
     <a href="#buyData" data-bs-toggle="collapse" onclick="toggleContent('buyData')"><i class="bi bi-wifi"></i> Buy Data</a>
     <a href="#dataHistory" data-bs-toggle="collapse" onclick="toggleContent('dataHistory')"><i class="bi bi-clock-history"></i> Data History</a>
-    <a href="#" onclick="toggleContent('withdrawContent')"><i class="bi bi-cash"></i> Withdraw Referral Commission/Wallet Bonus</a>
+    <a href="#" onclick="toggleContent('withdraw')"><i class="bi bi-cash"></i> Withdraw Referral Commission/Wallet Bonus</a>
     <a href="#myAccount" data-bs-toggle="collapse"><i class="bi bi-person"></i> My Account</a>
     <div class="collapse" id="myAccount">
       <a href="fundwallet.html" class="dropdown-item">Add Money</a>
@@ -324,7 +324,6 @@
       </table>
     </div>
 
-    <!-- Other sections as per requirement -->
   <!-- Withdraw Commission/Wallet Bonus Section -->
   <div id="withdrawContent" class="hidden">
     <h2>Withdraw Commission/Wallet Bonus</h2>
@@ -364,9 +363,10 @@
     document.getElementById('referralLink').textContent = 'https://example.com/referral-link'; // Replace with actual referral link
 
     // Add event listener for Withdraw button
-document.querySelector("#withdrawReferral").addEventListener("click", function() {
+document.querySelector("#withdraw").addEventListener("click", function() {
   toggleContent('withdrawContent');
 });
+
 
 // Withdrawal form submission
 document.getElementById("withdrawForm").addEventListener("submit", function(event) {
