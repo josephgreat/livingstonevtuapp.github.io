@@ -107,8 +107,6 @@
       </div>
     </div>
   </nav>
-  
-
 
   <!-- Sidebar -->
   <div class="sidebar">
@@ -125,13 +123,14 @@
       <a href="#" class="dropdown-item">Update Profile</a>
     </div>
     <a href="#cableTv"><i class="bi bi-tv"></i> Cable & TV Recharge</a>
-    
   </div>
 
   <!-- Main Content -->
   <div class="content">
     <div id="dashboardContent">
-      <h2>Dashboard</h2>
+      <h2>Welcome, <span id="userName">[User's Name]</span></h2>
+      <p>Share your referral link: <a href="#" id="referralLink">[Referral Link]</a></p>
+
       <div class="row">
         <div class="col-md-4">
           <div class="feature-card">
@@ -220,71 +219,74 @@
         </div>
       </div>
     </div>
-    
+
     <div id="airtimeHistoryContent" class="hidden">
       <h2>Airtime History</h2>
-      <div class="feature-card">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">SN</th>
-              <th scope="col">Network</th>
-              <th scope="col">Mobile No</th>
-              <th scope="col">Value</th>
-              <th scope="col">Old Balance</th>
-              <th scope="col">Amount Deducted</th>
-              <th scope="col">New Balance</th>
-              <th scope="col">Cashback</th>
-              <th scope="col">Status</th>
-              <th scope="col">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Populate with airtime history data -->
-          </tbody>
-        </table>
-      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Network</th>
+            <th>Phone Number</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01/01/2024</td>
+            <td>MTN</td>
+            <td>08012345678</td>
+            <td>#500</td>
+            <td>Successful</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
     </div>
-    <br>
-    <br>
-    <br>
+
     <div id="buyDataContent" class="hidden">
+      <h2>Buy Data</h2>
       <div class="row">
         <div class="col-md-6">
           <div class="feature-card">
             <h3>Buy Data</h3>
             <form>
               <div class="mb-3">
-                <label for="dataType" class="form-label">Select Network</label>
-                <select class="form-select" id="dataType">
-                  <option value="network">MTN</option>
-                  <option value="network">GLO</option>
-                  <option value="network">9Mobile</option>
-                  <option value="network">Airtel</option>
-                  <!-- Add more options if needed -->
+                <label for="network" class="form-label">Select Network</label>
+                <select class="form-select" id="network">
+                  <option value="MTN">MTN</option>
+                  <option value="GLO">GLO</option>
+                  <option value="9Mobile">9Mobile</option>
+                  <option value="Airtel">Airtel</option>
                 </select>
               </div>
               <div class="mb-3">
-                <label for="dataBundle" class="form-label">Select Data Bundle</label>
-                <select class="form-select" id="dataBundle">
-                  <!-- Populate with available data bundles -->
-                  <option value="100MB">100MB - ₦100</option>
-                  <option value="500MB">500MB - ₦500</option>
-                  <option value="1GB">1GB - ₦1000</option>
-                  <!-- Add more options as needed -->
+                <label for="phoneNumber" class="form-label">Enter Number</label>
+                <input type="text" class="form-control" id="phoneNumber">
+              </div>
+              <div class="mb-3">
+                <label for="dataPlan" class="form-label">Select Data Plan</label>
+                <select class="form-select" id="dataPlan">
+                  <option value="MTN Daily 1GB - #200">MTN Daily 1GB - #200</option>
+                  <option value="MTN Weekly 5GB - #1500">MTN Weekly 5GB - #1500</option>
+                  <option value="MTN Monthly 10GB - #3000">MTN Monthly 10GB - #3000</option>
                 </select>
               </div>
               <div class="mb-3">
-                <label for="phoneNumberData" class="form-label">Enter Number</label>
-                <input type="text" class="form-control" id="phoneNumberData">
+                <label for="amountToPay" class="form-label">Amount to Pay (2% deducted)</label>
+                <input type="text" class="form-control" id="amountToPay" disabled>
               </div>
               <div class="mb-3">
-                <label for="amountData" class="form-label">Amount</label>
-                <input type="text" class="form-control" id="amountData">
+                <label for="secretPin" class="form-label">Secret Pin</label>
+                <input type="password" class="form-control" id="secretPin">
               </div>
-              <div class="mb-3">
-                <label for="secretPinData" class="form-label">Secret Pin</label>
-                <input type="password" class="form-control" id="secretPinData">
+              <p class="text-danger">Minimum data purchase: #10. Maximum: #100,000</p>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="saveForFutureUse">
+                <label class="form-check-label" for="saveForFutureUse">
+                  Save for future use
+                </label>
               </div>
               <button type="submit" class="btn btn-primary">Buy Data</button>
             </form>
@@ -295,102 +297,52 @@
 
     <div id="dataHistoryContent" class="hidden">
       <h2>Data History</h2>
-      <div class="feature-card">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">SN</th>
-              <th scope="col">Product</th>
-              <th scope="col">Mobile No</th>
-              <th scope="col">Old Balance</th>
-              <th scope="col">Amount Charged</th>
-              <th scope="col">New Balance</th>
-              <th scope="col">Cashback</th>
-              <th scope="col">Status</th>
-              <th scope="col">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Populate with data history data -->
-            <tr>
-              <td>1</td>
-              <td>500MB</td>
-              <td>08012345678</td>
-              <td>₦1000</td>
-              <td>₦500</td>
-              <td>₦500</td>
-              <td>₦10</td>
-              <td>Success</td>
-              <td>2024-06-09</td>
-            </tr>
-            <!-- Add more rows as needed -->
-          </tbody>
-        </table>
-      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Network</th>
+            <th>Phone Number</th>
+            <th>Data Plan</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01/01/2024</td>
+            <td>MTN</td>
+            <td>08012345678</td>
+            <td>1GB</td>
+            <td>#500</td>
+            <td>Successful</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
     </div>
+
+    <!-- Other sections as per requirement -->
   </div>
-  <br>
-  <br>
-  <br>
 
   <!-- Footer -->
-  <footer class="footer">
+  <div class="footer">
     <p>&copy; 2024 Livingstone VTU App. All rights reserved.</p>
-  </footer>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.getElementById("amount").addEventListener("input", function() {
-      // Calculate 2% deduction for amount to pay
-      var amount = parseFloat(this.value);
-      if (!isNaN(amount)) {
-        var amountToPay = amount * 0.98;
-        document.getElementById("amountToPay").value = amountToPay.toFixed(2);
-      } else {
-        document.getElementById("amountToPay").value = "";
-      }
-    });
-
     function toggleContent(contentId) {
-      var dashboardContent = document.getElementById("dashboardContent");
-      var buyAirtimeContent = document.getElementById("buyAirtimeContent");
-      var airtimeHistoryContent = document.getElementById("airtimeHistoryContent");
-      var buyDataContent = document.getElementById("buyDataContent");
-      var dataHistoryContent = document.getElementById("dataHistoryContent");
-      if (contentId === "buyAirtime") {
-        dashboardContent.classList.add("hidden");
-        airtimeHistoryContent.classList.add("hidden");
-        buyAirtimeContent.classList.remove("hidden");
-        buyDataContent.classList.add("hidden");
-        dataHistoryContent.classList.add("hidden");
-      } else if (contentId === "airtimeHistory") {
-        dashboardContent.classList.add("hidden");
-        buyAirtimeContent.classList.add("hidden");
-        airtimeHistoryContent.classList.remove("hidden");
-        buyDataContent.classList.add("hidden");
-        dataHistoryContent.classList.add("hidden");
-      } else if (contentId === "buyData") {
-        dashboardContent.classList.add("hidden");
-        buyAirtimeContent.classList.add("hidden");
-        airtimeHistoryContent.classList.add("hidden");
-        buyDataContent.classList.remove("hidden");
-        dataHistoryContent.classList.add("hidden");
-      } else if (contentId === "dataHistory") {
-        dashboardContent.classList.add("hidden");
-        buyAirtimeContent.classList.add("hidden");
-        airtimeHistoryContent.classList.add("hidden");
-        buyDataContent.classList.add("hidden");
-        dataHistoryContent.classList.remove("hidden");
-      } else {
-        dashboardContent.classList.remove("hidden");
-        buyAirtimeContent.classList.add("hidden");
-        airtimeHistoryContent.classList.add("hidden");
-        buyDataContent.classList.add("hidden");
-        dataHistoryContent.classList.add("hidden");
-      }
+      const contents = ['dashboardContent', 'buyAirtimeContent', 'airtimeHistoryContent', 'buyDataContent', 'dataHistoryContent'];
+      contents.forEach(content => {
+        document.getElementById(content).classList.add('hidden');
+      });
+      document.getElementById(contentId + 'Content').classList.remove('hidden');
     }
-  </script>
 
+    // Placeholder for dynamic user data
+    document.getElementById('userName').textContent = 'John Doe'; // Replace with actual user's name
+    document.getElementById('referralLink').textContent = 'https://example.com/referral-link'; // Replace with actual referral link
+  </script>
 </body>
 </html>
-
-
