@@ -325,6 +325,24 @@
     </div>
 
     <!-- Other sections as per requirement -->
+<!-- Withdraw Commission/Wallet Bonus Section -->
+<div id="withdrawContent" class="hidden">
+  <h2>Withdraw Commission/Wallet Bonus</h2>
+  <div class="feature-card">
+    <form id="withdrawForm">
+      <div class="mb-3">
+        <label for="withdrawAmount" class="form-label">Amount to Withdraw</label>
+        <input type="text" class="form-control" id="withdrawAmount">
+      </div>
+      <div class="mb-3">
+        <label for="secretPinWithdraw" class="form-label">Secret Pin</label>
+        <input type="password" class="form-control" id="secretPinWithdraw">
+      </div>
+      <button type="submit" class="btn btn-primary">Withdraw</button>
+    </form>
+  </div>
+</div>
+
   </div>
 
   <!-- Footer -->
@@ -345,6 +363,37 @@
     // Placeholder for dynamic user data
     document.getElementById('userName').textContent = 'John Doe'; // Replace with actual user's name
     document.getElementById('referralLink').textContent = 'https://example.com/referral-link'; // Replace with actual referral link
+
+    // Add event listener for Withdraw button
+document.querySelector("#withdrawReferral").addEventListener("click", function() {
+  toggleContent('withdrawContent');
+});
+
+// Withdrawal form submission
+document.getElementById("withdrawForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent default form submission
+  
+  // Fetch withdrawal amount and PIN
+  var withdrawAmount = parseFloat(document.getElementById("withdrawAmount").value);
+  var secretPinWithdraw = document.getElementById("secretPinWithdraw").value;
+  
+  // Validate withdrawal amount
+  if (isNaN(withdrawAmount) || withdrawAmount <= 0) {
+    alert("Please enter a valid withdrawal amount.");
+    return;
+  }
+  
+  // Perform withdrawal process (You can implement this part based on your backend logic)
+  // Example: Make an AJAX request to a server endpoint to process the withdrawal
+  
+  // Reset form fields after successful withdrawal
+  document.getElementById("withdrawAmount").value = "";
+  document.getElementById("secretPinWithdraw").value = "";
+  
+  // Display success message (or handle response from server)
+  alert("Withdrawal successful!");
+});
+
   </script>
 </body>
 </html>
