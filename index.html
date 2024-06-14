@@ -195,6 +195,28 @@
         margin-bottom: 30px; /* Add space below navbar */
       }
     }
+
+    .footer {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Media query for laptop and desktop screens */
+@media (max-width: 768px) {
+  .footer {
+    display: none; /* Hide the footer on mobile screens */
+  }
+}
+
   </style>
 </head>
 <body>
@@ -213,7 +235,7 @@
         <a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="signup.html"><i class="bi bi-box-arrow-in-right"></i> Signup</a>
+        <a class="nav-link" href="signup.html"><i class="bi bi-box-arrow-in-right"></i> Sign in/Login</a>
       </li>
     </ul>
   </div>
