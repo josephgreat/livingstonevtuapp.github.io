@@ -85,15 +85,17 @@
     .footer p {
       margin: 0;
     }
-    btn a {
-    color: white;
-    text-decoration: none;
-  }
 
-  .btn a:hover {
-    color: white;
-    text-decoration: none;
-  }
+    /* Media query for responsive design */
+    @media (max-width: 768px) {
+      .signup-container {
+        padding: 20px;
+      }
+
+      .btn-primary {
+        margin-top: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -107,17 +109,6 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-gear"></i> Services
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#"><i class="bi bi-phone"></i> Airtime Top-Up</a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-wifi"></i> Affordable Data Bundles</a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-people"></i> Referral Program</a></li>
-              <li><a class="dropdown-item" href="#"><i class="bi bi-tv"></i> Cable and TV Recharge</a></li>
-            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About Us</a>
@@ -158,7 +149,7 @@
         <a href="#" class="text-decoration-none">Forgot Password?</a>
       </div>
       
-      <button type="submit" class="btn btn-primary w-100" onclick="location.href='login.html'">Sign Up</button>
+      <button type="submit" class="btn btn-primary w-100">Sign Up</button>
     </form>
     
   </div>
@@ -168,69 +159,47 @@
       <p>&copy; 2024 Livingstone VTU App. All rights reserved.</p>
     </div>
   </footer>
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyCcAwLCxbCy-lsk-sKJMKl1veRDzgMNVgQ",
-      authDomain: "livingstone-vtu-app.firebaseapp.com",
-      projectId: "livingstone-vtu-app",
-      storageBucket: "livingstone-vtu-app.appspot.com",
-      messagingSenderId: "376647590390",
-      appId: "1:376647590390:web:1a0a8345b9792f833c67d7",
-      measurementId: "G-J49K1PM419"
-    };
-  
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function validateForm() {
+      // Retrieve form inputs
+      var mobileNumber = document.getElementById("mobileNumber").value;
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      // Regular expression for validating email format
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Check if fields are empty
+      if (mobileNumber.trim() === "" || firstName.trim() === "" || lastName.trim() === "" || email.trim() === "" || password.trim() === "") {
+        alert("Please fill in all fields");
+        return false;
+      }
+
+      // Validate email format
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        return false;
+      }
+
+      // Validate password (example validation)
+      if (password !== "1234") {
+        alert("Invalid password");
+        return false;
+      }
+
+      // Additional validation checks can be added here
+
+      // If all checks pass, redirect to the login page
+      window.location.href = "login.html";
+      return true;
+    }
   </script>
 
-<script>
-  function validateForm() {
-    // Retrieve form inputs
-    var mobileNumber = document.getElementById("mobileNumber").value;
-    var firstName = document.getElementById("firstName").value;
-    var lastName = document.getElementById("lastName").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-
-    // Regular expression for validating email format
-    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // Check if fields are empty
-    if (mobileNumber.trim() === "" || firstName.trim() === "" || lastName.trim() === "" || email.trim() === "" || password.trim() === "") {
-      alert("Please fill in all fields");
-      return false;
-    }
-
-    // Validate email format
-    if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address");
-      return false;
-    }
-
-    // Validate password
-    if (password !== "1234") {
-      alert("Invalid password");
-      return false;
-    }
-
-    // Additional validation checks can be added here
-
-    // If all checks pass, redirect to the login page
-    window.location.href = "login.html";
-    return true;
-  }
-</script>
-
 </body>
-
 </html>
