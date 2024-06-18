@@ -1,16 +1,28 @@
 {
-    "name": "PWA-App", 
-    "short_name": "PWA",
-    "start_url": ".",
-    "theme_color": "#4287f5",
-    "background_color": "#ffffff",
-    "display": "standalone",
-    "icons":[
-      {
-        "src":"images/logo.jpg",
-        "sizes": "652x597",
-        "type": "image/jpg"
-      }
-    ]
-  
-  }
+  "name": "Livingstone VTU",
+  "short_name": "LsVTU",
+  "start_url": "./index.html",
+  "theme_color": "#4CAF50",
+  "background_color": "#f5f5f5",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "601x601",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./images/screenshot1.png",
+      "sizes": "1280x1912",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/screenshot3.png",
+      "sizes": "320x685",
+      "type": "image/png"
+    }
+  ],
+  "form_factor": "desktop"
+}
