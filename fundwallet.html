@@ -144,22 +144,18 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <a href="Dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard</a>
-    <a href="#airtimeTopUp" data-bs-toggle="collapse" onclick="toggleContent('buyAirtime')"><i class="bi bi-phone"></i> Buy Airtime</a>
+    <a href="Dashboard.html" data-bs-toggle="collapse" onclick="toggleContent('buyAirtime')"><i class="bi bi-phone"></i> Buy Airtime</a>
     <a href="#airtimeHistory" data-bs-toggle="collapse" onclick="toggleContent('airtimeHistory')"><i class="bi bi-clock-history"></i> Airtime History</a>
     <a href="#buyData" data-bs-toggle="collapse" onclick="toggleContent('buyData')"><i class="bi bi-wifi"></i> Buy Data</a>
     <a href="#dataHistory" data-bs-toggle="collapse" onclick="toggleContent('dataHistory')"><i class="bi bi-clock-history"></i> Data History</a>
-    <a href="#withdrawReferral"><i class="bi bi-cash"></i> Withdraw Referral Commission/Wallet Bonus</a>
+    <a href="withdrawcommission.html"><i class="bi bi-cash"></i> Withdraw Referral Commission/Wallet Bonus</a>
     <a href="#myAccount" data-bs-toggle="collapse"><i class="bi bi-person"></i> My Account</a>
     <div class="collapse" id="myAccount">
       <a href="fundwallet.html" class="dropdown-item">Add Money</a>
-      <a href="#" class="dropdown-item">Wallet Bonus History</a>
-      <a href="#" class="dropdown-item">Update Profile</a>
+      <a href="updateprofile.html" class="dropdown-item">Update Profile</a>
     </div>
-    <a href="#cableTv"><i class="bi bi-tv"></i> Cable & TV Recharge</a>
-    <a href="#settings"><i class="bi bi-gear"></i> Settings</a>
+    <a href="cableTVrecharge.html"><i class="bi bi-tv"></i> Cable & TV Recharge</a>
   </div>
-    
-      
 
   <!-- Main Content -->
   <div class="content">
@@ -195,8 +191,7 @@
             <div class="mb-3">
               <label for="paymentMethod" class="form-label">Select Payment Method</label>
               <select class="form-select" id="paymentMethod">
-                <option value="auto">Auto Funding</option>
-                <option value="manual">Manually</option>
+                <option value="manual">Auto Funding</option>
               </select>
             </div>
             <div class="mb-3">
@@ -298,6 +293,3 @@
     });
   </script>
 
-<script src="/app.js"></script>
-
-</body>
